@@ -23,21 +23,23 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>title</th>
-            <th>description</th>
-            <th>discount</th>
-            <th>expira date</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Discount</th>
+            <th>Expire date</th>
+            <th>Edit</th>
           </tr>
         </thead>
 
         <tbody>
           <tr *ngFor="let oferta of ofertas">
-            <td class="ofertasName"><a routerLink="/oferta/{{oferta.id}}" routerLinkActive="active"
-                (click)="onSelect(oferta)">{{oferta.title}} </a></td>
-            <td>{{oferta.description}}</td>    
+            <td class="ofertasName">{{oferta.title}}</td>
+            <td>{{oferta.description}}</td>
             <td>{{oferta.discount}}</td>
             <td>{{oferta.expiredate}}</td>
-            <td>
+            <td class="ofertasName"><a routerLink="/oferta/{{oferta.id}}" routerLinkActive="active"
+                (click)="onSelect(oferta)"> Editar </a>
+            </td>
           </tr>
         </tbody>
       </table>
