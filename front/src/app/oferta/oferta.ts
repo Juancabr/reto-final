@@ -1,7 +1,7 @@
 export interface Oferta {
     id: number,
     title: string,
-    descripcion: string,
+    description: string,
     discount: number,
-    expireDate: Date
+    expiredate: Date
 }
