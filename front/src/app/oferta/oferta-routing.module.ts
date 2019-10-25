@@ -7,7 +7,7 @@ import { PutOfertasComponent } from './put-ofertas/put-ofertas.component';
 const ofertaRoutes: Routes = [
   {path: 'ofertas', component: ListAllOfertasComponent},
   {path: 'ofertas/add', component: InsertOfertasComponent},
-  {path: 'ofertas/:id/edit', component: PutOfertasComponent},
+  {path: 'ofertas/:id', component: PutOfertasComponent},
 ];
 
 @NgModule({
