@@ -33,7 +33,8 @@
         <tbody>
           <tr *ngFor="let oferta of ofertas">
             <td class="ofertasName"><a routerLink="/oferta/{{oferta.id}}" routerLinkActive="active"
-                (click)="onSelect(oferta)">{{oferta.title}} {{oferta.description}}</a></td>
+                (click)="onSelect(oferta)">{{oferta.title}} </a></td>
+            <td>{{oferta.description}}</td>    
             <td>{{oferta.discount}}</td>
             <td>{{oferta.expiredate}}</td>
             <td>
