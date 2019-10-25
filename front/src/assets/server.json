@@ -1,0 +1,46 @@
+{
+    "ofertas": [
+        {
+            "id": 1,
+            "title": "Oferta_1",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry 1",
+            "discount": 0.1,
+            "expireDate": "1/01/2019"
+        },
+        {
+            "id": 2,
+            "title": "Oferta_2",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry 1",
+            "discount": 0.2,
+            "expireDate": "12/01/2019"
+        },
+        {
+            "id": 3,
+            "title": "Oferta_3",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry 3",
+            "discount": 0.3,
+            "expireDate": "13/01/2019"
+        },
+        {
+            "id": 4,
+            "title": "Oferta_4",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry 4",
+            "discount": 0.4,
+            "expireDate": "14/01/2019"
+        },
+        {
+            "id": 5,
+            "title": "Oferta_5",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry 5",
+            "discount": 0.5,
+            "expireDate": "15/01/2019"
+        },
+        {
+            "id": 6,
+            "title": "Oferta_6",
+            "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry 6",
+            "discount": 0.6,
+            "expireDate": "16/01/2019"
+        }
+    ]
+}
