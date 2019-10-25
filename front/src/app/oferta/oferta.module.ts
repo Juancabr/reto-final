@@ -7,11 +7,13 @@ import { ListAllOfertasComponent } from './list-all-ofertas/list-all-ofertas.com
 import { OfertaService } from './oferta.service';
 import { PutOfertasComponent } from './put-ofertas/put-ofertas.component';
 import { ListOfertasComponent } from './list-ofertas/list-ofertas.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    OfertaRoutingModule
+    OfertaRoutingModule,
+    FormsModule,
   ],
   declarations: [
     InsertOfertasComponent,

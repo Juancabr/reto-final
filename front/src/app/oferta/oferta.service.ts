@@ -2,18 +2,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Oferta } from './oferta';
+import { HandleError, HttpErrorHandler } from 'app/error.service';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OfertaService {
 
-  serverURL: string = "http://172.23.137.142:3000/ofertas"
+  serverURL: string = "http://172.23.137.142:3000/ofertas";
 
-  constructor(private http: HttpClient) { }
+  private handlerError: HandleError;
+
+  constructor(private http: HttpClient, private httpErrorHandler: HttpErrorHandler) {
+    this.handlerError = httpErrorHandler.createHandleError('OwnerService');
+  }
 
   getOfertas(): Observable<Oferta[]> {
-    return this.http.get<Oferta[]>(this.serverURL);
+    return this.http.get<Oferta[]>(this.serverURL).pipe(
+      catchError(this.handlerError('getOwners', []))
+    );
   }
 
   getOfertaById(oferta_id: string): Observable<Oferta> {

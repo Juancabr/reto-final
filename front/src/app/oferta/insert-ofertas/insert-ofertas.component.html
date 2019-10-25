@@ -1,3 +1,60 @@
-<p>
-  insert-ofertas works!
-</p>
+<div class="container-fluid">
+  <div class="container xd-container">
+    <h2>
+      New oferta
+    </h2>
+    <form (ngSubmit)="onSubmit(ofertasForm.value)" #ofertasForm="ngForm" class="form-horizontal">
+      <div class="form-group" hidden="true">
+        <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="oferta.id" name="id"/>
+      </div>
+
+      <div class="form-group has-feedback" [class.has-success]="title.dirty && title.valid" [class.has-error]="title.dirty &&  !title.valid">
+        <label for="title" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="title" [(ngModel)]="oferta.title" minlength="2" required name="title" #title="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="title.valid" [class.glyphicon-remove]="!title.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="title.dirty && title.hasError('required')">Title is required</span>
+          <span class="help-block" *ngIf="title.dirty && title.hasError('minlength')">Title must be at least 2 characters long</span>
+        </div>
+      </div>
+
+      <div class="form-group has-feedback" [class.has-success]="description.dirty && description.valid" [class.has-error]="description.dirty &&  !description.valid">
+        <label for="description" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="description" [(ngModel)]="oferta.description" minlength="10" required name="description" #description="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="description.valid" [class.glyphicon-remove]="!description.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="description.dirty && description.hasError('required')">Description is required</span>
+          <span class="help-block" *ngIf="description.dirty && description.hasError('minlength')">Description must be at least 2 characters long</span>
+        </div>
+      </div>
+
+      <div class="form-group has-feedback" [class.has-success]="discount.dirty && discount.valid" [class.has-error]="discount.dirty &&  !discount.valid">
+        <label for="discount" class="col-sm-2 control-label">Discount</label>
+        <div class="col-sm-10">
+          <input type="number" class="form-control" id="discount" [(ngModel)]="oferta.discount" required name="discount" #discount="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="discount.valid" [class.glyphicon-remove]="!discount.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="discount.dirty && discount.hasError('required')">Discount is required</span>
+          <span class="help-block" *ngIf="discount.dirty && discount.hasError('minlength')">Discount must be at least 1</span>
+        </div>
+      </div>
+
+      <div class="form-group has-feedback" [class.has-success]="expiredate.dirty && expiredate.valid" [class.has-error]="expiredate.dirty &&  !expiredate.valid">
+        <label for="expiredate" class="col-sm-2 control-label">Expire date</label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control" id="expiredate" [(ngModel)]="oferta.expiredate" required name="expiredate" #expiredate="ngModel"/>
+          <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="expiredate.valid" [class.glyphicon-remove]="!expiredate.valid" aria-hidden="true"></span>
+          <span class="help-block" *ngIf="expiredate.dirty && expiredate.hasError('required')">Expiredate is required</span>
+          <span class="help-block" *ngIf="expiredate.dirty && expiredate.hasError('minlength')">Expiredate must be at least 1</span>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-default" type="button" (click)="gotoofertasList()">Back</button>
+          <button class="btn btn-default" type="submit" [disabled]="!ofertaForm.valid">Add oferta</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
