@@ -25,13 +25,13 @@ export class InsertOfertasComponent implements OnInit {
     this.ofertaService.addOferta(oferta).subscribe(
       new_oferta => {
         this.oferta = new_oferta;
-        this.gotoofertasList();
+        this.gotoOfertasList();
       },
       error => this.errorMessage = <any>error
     );
   }
 
-  gotoofertasList() {
+  gotoOfertasList() {
     this.router.navigate(['/ofertas']);
   }
 
