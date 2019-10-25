@@ -300,6 +300,11 @@ public class ClinicServiceImpl implements ClinicService {
 	}
 
 	@Override
+	public Collection<Oferta> findAllOfertasNotExpire() throws DataAccessException {
+		return ofertaRepository.findAllOfertasNotExpire();
+	}
+	
+	@Override
 	public void saveOferta(Oferta oferta) throws DataAccessException {
 		ofertaRepository.saveOferta(oferta);
 		
@@ -311,7 +316,11 @@ public class ClinicServiceImpl implements ClinicService {
 		
 	}
 	
-	
+	@Override
+	public void updateOferta(Oferta oferta) throws DataAccessException {
+		ofertaRepository.deleteOferta(oferta);
+	}
+
 
 
 }

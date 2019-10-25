@@ -71,7 +71,9 @@ public interface ClinicService {
 	
 	Oferta findOfertaById(int id);
 	Collection<Oferta> findAllOfertas() throws DataAccessException;
+	Collection<Oferta> findAllOfertasNotExpire() throws DataAccessException;
 	void saveOferta(Oferta oferta) throws DataAccessException;
 	void deleteOferta(Oferta oferta) throws DataAccessException;
+	void updateOferta(Oferta oferta) throws DataAccessException;
 
 }
