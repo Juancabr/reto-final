@@ -5,7 +5,9 @@ import java.util.Collection;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.samples.petclinic.model.Oferta;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface OfertaRepository {
 
 	Oferta findOfertaById(int id);
