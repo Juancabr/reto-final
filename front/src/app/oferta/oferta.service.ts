@@ -19,11 +19,14 @@ export class OfertaService {
   }
 
   getOfertas(): Observable<Oferta[]> {
-    return this.http.get<Oferta[]>(this.serverURL).pipe(
-      catchError(this.handlerError('getOwners', []))
-    );
+    return this.http.get<Oferta[]>(this.serverURL)
+    
   }
 
+  getOfertasVigente(): Observable<Oferta[]> {
+    return this.http.get<Oferta[]>(this.serverURL)
+  }
+  
   getOfertaById(oferta_id: string): Observable<Oferta> {
     return this.http.get<Oferta>(this.serverURL + '/' + oferta_id);
   }
