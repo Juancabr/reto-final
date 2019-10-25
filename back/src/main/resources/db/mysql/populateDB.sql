@@ -52,6 +52,12 @@ INSERT IGNORE INTO visits VALUES (2, 8, '2011-03-04', 'rabies shot');
 INSERT IGNORE INTO visits VALUES (3, 8, '2009-06-04', 'neutered');
 INSERT IGNORE INTO visits VALUES (4, 7, '2008-09-04', 'spayed');
 
+INSERT IGNORE INTO ofertas VALUES (1, 'Oferta 1', 'Descripcion de la oferta 1', 50.0, '2049-03-14');
+INSERT IGNORE INTO ofertas VALUES (2, 'Oferta 2', 'Descripcion de la oferta 2', 30.0, '2049-12-16');
+INSERT IGNORE INTO ofertas VALUES (3, 'Oferta 3', 'Descripcion de la oferta 3', 70.0, '2049-07-02');
+INSERT IGNORE INTO ofertas VALUES (4, 'Oferta 4', 'Descripcion de la oferta 4', 20.0, '2049-11-09');
+INSERT IGNORE INTO ofertas VALUES (5, 'Oferta 5', 'Descripcion de la oferta 5', 60.0, '2049-08-05');
+
 INSERT IGNORE INTO users(username,password,enabled) VALUES ('admin','admin', true);
 
 INSERT IGNORE INTO roles (username, role) VALUES ('admin', 'ROLE_OWNER_ADMIN');
