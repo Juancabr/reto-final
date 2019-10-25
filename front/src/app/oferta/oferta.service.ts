@@ -10,18 +10,12 @@ import { catchError } from 'rxjs/operators';
 })
 export class OfertaService {
 
-  serverURL: string = "http://172.23.137.142:3000/ofertas";
+  serverURL: string = "http://localhost:3000/ofertas";
 
-  private handlerError: HandleError;
-
-  constructor(private http: HttpClient, private httpErrorHandler: HttpErrorHandler) {
-    this.handlerError = httpErrorHandler.createHandleError('OwnerService');
-  }
+  constructor(private http: HttpClient, private httpErrorHandler: HttpErrorHandler) { }
 
   getOfertas(): Observable<Oferta[]> {
-    return this.http.get<Oferta[]>(this.serverURL).pipe(
-      catchError(this.handlerError('getOwners', []))
-    );
+    return this.http.get<Oferta[]>(this.serverURL);
   }
 
   getOfertaById(oferta_id: string): Observable<Oferta> {

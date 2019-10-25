@@ -34,7 +34,6 @@
           <input type="number" class="form-control" id="discount" [(ngModel)]="oferta.discount" required name="discount" #discount="ngModel"/>
           <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="discount.valid" [class.glyphicon-remove]="!discount.valid" aria-hidden="true"></span>
           <span class="help-block" *ngIf="discount.dirty && discount.hasError('required')">Discount is required</span>
-          <span class="help-block" *ngIf="discount.dirty && discount.hasError('minlength')">Discount must be at least 1</span>
         </div>
       </div>
 
@@ -44,14 +43,13 @@
           <input type="date" class="form-control" id="expiredate" [(ngModel)]="oferta.expiredate" required name="expiredate" #expiredate="ngModel"/>
           <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
           <span class="help-block" *ngIf="expiredate.dirty && expiredate.hasError('required')">Expiredate is required</span>
-          <span class="help-block" *ngIf="expiredate.dirty && expiredate.hasError('minlength')">Expiredate must be at least 1</span>
         </div>
       </div>
 
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button class="btn btn-default" type="button" (click)="gotoofertasList()">Back</button>
+          <button class="btn btn-default" type="button" (click)="gotoOfertasList()">Back</button>
           <button class="btn btn-default" type="submit" [disabled]="!ofertasForm.valid">Add oferta</button>
         </div>
       </div>
