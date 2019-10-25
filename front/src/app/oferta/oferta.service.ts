@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class OfertaService {
 
-  serverURL: string = "http://172.23.137.142:3000/ofertas";
+  serverURL: string = "http://localhost:3000/ofertas";
 
   constructor(private http: HttpClient, private httpErrorHandler: HttpErrorHandler) { }
 

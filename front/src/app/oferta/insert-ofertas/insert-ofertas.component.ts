@@ -21,7 +21,9 @@ export class InsertOfertasComponent implements OnInit {
   }
 
   onSubmit(oferta: Oferta) {
-    oferta.id = null;
+    oferta.id = 0;
+    console.log(oferta);
+    
     this.ofertaService.addOferta(oferta).subscribe(
       new_oferta => {
         this.oferta = new_oferta;
