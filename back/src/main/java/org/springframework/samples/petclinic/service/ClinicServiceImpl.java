@@ -22,12 +22,14 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.orm.ObjectRetrievalFailureException;
+import org.springframework.samples.petclinic.model.Oferta;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
+import org.springframework.samples.petclinic.repository.OfertaRepository;
 import org.springframework.samples.petclinic.repository.OwnerRepository;
 import org.springframework.samples.petclinic.repository.PetRepository;
 import org.springframework.samples.petclinic.repository.PetTypeRepository;
@@ -54,6 +56,7 @@ public class ClinicServiceImpl implements ClinicService {
     private VisitRepository visitRepository;
     private SpecialtyRepository specialtyRepository;
 	private PetTypeRepository petTypeRepository;
+	private OfertaRepository ofertaRepository;
 
     @Autowired
      public ClinicServiceImpl(
@@ -283,6 +286,29 @@ public class ClinicServiceImpl implements ClinicService {
 	@Transactional(readOnly = true)
 	public Collection<Visit> findVisitsByPetId(int petId) {
 		return visitRepository.findByPetId(petId);
+	}
+
+	@Override
+	public Oferta findOfertaById(int id) {
+		ofertaRepository.findOfertaById(id);
+		return null;
+	}
+
+	@Override
+	public Collection<Oferta> findAllOfertas() throws DataAccessException {
+		return ofertaRepository.findAllOfertas();
+	}
+
+	@Override
+	public void saveOferta(Oferta oferta) throws DataAccessException {
+		ofertaRepository.saveOferta(oferta);
+		
+	}
+
+	@Override
+	public void deleteOferta(Oferta oferta) throws DataAccessException {
+		ofertaRepository.deleteOferta(oferta);
+		
 	}
 	
 	
