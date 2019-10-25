@@ -6,7 +6,7 @@ import { InsertOfertasComponent } from './insert-ofertas/insert-ofertas.componen
 import { ListAllOfertasComponent } from './list-all-ofertas/list-all-ofertas.component';
 import { OfertaService } from './oferta.service';
 import { PutOfertasComponent } from './put-ofertas/put-ofertas.component';
-import { ListOfertasComponent } from './list-all-ofertas/list-ofertas.component';
+import { ListOfertasComponent } from './list-ofertas/list-ofertas.component';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { ListOfertasComponent } from './list-all-ofertas/list-ofertas.component'
   ],
   declarations: [
     InsertOfertasComponent,
-    PutOfertasComponent
+    PutOfertasComponent,
     ListAllOfertasComponent,
     ListOfertasComponent,
   ],
