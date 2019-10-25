@@ -80,3 +80,13 @@ CREATE TABLE IF NOT EXISTS roles (
   KEY fk_username_idx (username),
   CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users (username)
 ) engine=InnoDB;
+
+CREATE TABLE `petclinic`.`ofertas` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(100) NOT NULL,
+  `discount` DOUBLE NOT NULL,
+  `expiredate` DATETIME NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE);
+
