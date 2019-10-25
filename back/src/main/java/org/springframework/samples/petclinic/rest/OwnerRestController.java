@@ -136,5 +136,4 @@ public class OwnerRestController {
 		this.clinicService.deleteOwner(owner);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
-
 }
