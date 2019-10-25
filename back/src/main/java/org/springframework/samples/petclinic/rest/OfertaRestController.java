@@ -1,6 +1,7 @@
 package org.springframework.samples.petclinic.rest;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -11,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.samples.petclinic.model.Oferta;
-import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.service.ClinicService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
@@ -90,13 +90,13 @@ public class OfertaRestController {
 	public ResponseEntity<Collection<Oferta>> getOfertas() {
 		Collection<Oferta> ofertas = this.clinicService.findAllOfertas();
 		if (ofertas.isEmpty()) {
-			return new ResponseEntity<Collection<Oferta>>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<Collection<Oferta>>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<Collection<Oferta>>(ofertas, HttpStatus.OK);
 	}
 
 	@PreAuthorize("hasRole(@roles.ADMIN)")
-	@RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(value = "/getAllNotExpire", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<Collection<Oferta>> getOfertasNotExpire() {
 		Collection<Oferta> ofertas = this.clinicService.findAllOfertasNotExpire();
 		if (ofertas.isEmpty()) {

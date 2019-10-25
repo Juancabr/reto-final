@@ -292,35 +292,35 @@ public class ClinicServiceImpl implements ClinicService {
 
 	@Override
 	public Oferta findOfertaById(int id) {
-		ofertaRepository.findOfertaById(id);
-		return null;
+		return ofertaRepository.findById(id);
 	}
 
 	@Override
 	public Collection<Oferta> findAllOfertas() throws DataAccessException {
-		return ofertaRepository.findAllOfertas();
+		return ofertaRepository.findAll();
 	}
 
 	@Override
 	public Collection<Oferta> findAllOfertasNotExpire() throws DataAccessException {
-		return ofertaRepository.findAllOfertasNotExpire();
+		return ofertaRepository.findAllNotExpire();
 	}
 	
 	@Override
 	public void saveOferta(Oferta oferta) throws DataAccessException {
-		ofertaRepository.saveOferta(oferta);
+		ofertaRepository.save(oferta);
 		
 	}
 
 	@Override
 	public void deleteOferta(Oferta oferta) throws DataAccessException {
-		ofertaRepository.deleteOferta(oferta);
+		// TODO Auto-generated method stub
 		
 	}
-	
+
 	@Override
 	public void updateOferta(Oferta oferta) throws DataAccessException {
-		ofertaRepository.deleteOferta(oferta);
+		// TODO Auto-generated method stub
+		
 	}
 
 
